@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logic on Renata&#39;s learning journals</title>
+    <link>https://github.com/recossio/recossio.github.io/tags/logic/</link>
+    <description>Recent content in Logic on Renata&#39;s learning journals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jun 2022 22:41:10 +0530</lastBuildDate><atom:link href="https://github.com/recossio/recossio.github.io/tags/logic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding causation</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/causation/</link>
+      <pubDate>Fri, 03 Jun 2022 22:41:10 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/causation/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn the proper ways to interpret causation and how to avoid the correlation fallacy.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

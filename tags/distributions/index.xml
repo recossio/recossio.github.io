@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributions on Renata&#39;s learning journals</title>
+    <link>https://github.com/recossio/recossio.github.io/tags/distributions/</link>
+    <description>Recent content in Distributions on Renata&#39;s learning journals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Sep 2022 22:53:58 +0530</lastBuildDate><atom:link href="https://github.com/recossio/recossio.github.io/tags/distributions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Normal (Gaussian) distributions</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/normal/</link>
+      <pubDate>Mon, 05 Sep 2022 22:53:58 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/normal/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn and explore the properties of distributions, with a focus on the Normal (&amp;ldquo;Gaussian&amp;rdquo;) distribution, and use R to create a function to code one.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

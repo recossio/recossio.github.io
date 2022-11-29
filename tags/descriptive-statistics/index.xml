@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Descriptive statistics on Renata&#39;s learning journals</title>
+    <link>https://github.com/recossio/recossio.github.io/tags/descriptive-statistics/</link>
+    <description>Recent content in Descriptive statistics on Renata&#39;s learning journals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Aug 2022 23:29:21 +0530</lastBuildDate><atom:link href="https://github.com/recossio/recossio.github.io/tags/descriptive-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Descriptive Statistics</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</link>
+      <pubDate>Wed, 03 Aug 2022 23:29:21 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how to make sense of the data using R: the mean,the median, the mode and the standard deviation.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

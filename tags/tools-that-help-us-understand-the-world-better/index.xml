@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools that help us understand the world better on Renata&#39;s learning journals</title>
+    <link>https://github.com/recossio/recossio.github.io/tags/tools-that-help-us-understand-the-world-better/</link>
+    <description>Recent content in Tools that help us understand the world better on Renata&#39;s learning journals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Oct 2022 19:53:33 +0530</lastBuildDate><atom:link href="https://github.com/recossio/recossio.github.io/tags/tools-that-help-us-understand-the-world-better/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CLT &amp; Sampling distributions</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/clt/</link>
+      <pubDate>Sat, 15 Oct 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/clt/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how the central limit theorem relates to the idea of sampling distribution and how we can use simulations in R to model the sampling distributions we need in order to make inferences about a population.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Descriptive Statistics</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</link>
+      <pubDate>Wed, 03 Aug 2022 23:29:21 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how to make sense of the data using R: the mean,the median, the mode and the standard deviation.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Variables</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/variables/</link>
+      <pubDate>Tue, 12 Jul 2022 23:29:21 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/variables/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how to interpret variable relationships (whether they are independent, dependent and confounding).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

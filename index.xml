@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Renata&#39;s learning journals</title>
+    <link>https://github.com/recossio/recossio.github.io/</link>
+    <description>Recent content on Renata&#39;s learning journals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 14 Nov 2022 22:53:58 +0530</lastBuildDate><atom:link href="https://github.com/recossio/recossio.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Encouragement design</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/encouragement/</link>
+      <pubDate>Mon, 14 Nov 2022 22:53:58 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/encouragement/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn about encouragement design (the idea of randomizing an encouragement to take up a treatment rather than the treatment itself) and the advantages and disadvantages of developing one.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CLT &amp; Sampling distributions</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/clt/</link>
+      <pubDate>Sat, 15 Oct 2022 19:53:33 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/clt/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how the central limit theorem relates to the idea of sampling distribution and how we can use simulations in R to model the sampling distributions we need in order to make inferences about a population.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Normal (Gaussian) distributions</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/normal/</link>
+      <pubDate>Mon, 05 Sep 2022 22:53:58 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/normal/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn and explore the properties of distributions, with a focus on the Normal (&amp;ldquo;Gaussian&amp;rdquo;) distribution, and use R to create a function to code one.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Descriptive Statistics</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</link>
+      <pubDate>Wed, 03 Aug 2022 23:29:21 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/descriptive-statistics/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how to make sense of the data using R: the mean,the median, the mode and the standard deviation.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Variables</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/variables/</link>
+      <pubDate>Tue, 12 Jul 2022 23:29:21 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/variables/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn how to interpret variable relationships (whether they are independent, dependent and confounding).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image Gallery</title>
+      <link>https://github.com/recossio/recossio.github.io/gallery/</link>
+      <pubDate>Sat, 25 Jun 2022 18:35:46 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/gallery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Understanding causation</title>
+      <link>https://github.com/recossio/recossio.github.io/journal/causation/</link>
+      <pubDate>Fri, 03 Jun 2022 22:41:10 +0530</pubDate>
+      
+      <guid>https://github.com/recossio/recossio.github.io/journal/causation/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s learn the proper ways to interpret causation and how to avoid the correlation fallacy.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
