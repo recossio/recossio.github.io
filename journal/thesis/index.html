@@ -134,18 +134,6 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
     }
 
 </script>
-
-<script>
-    // based on suggestions from:
-    // Inclusive Components by Heydon Pickering https://inclusive-components.design/collapsible-sections/
-    export let headerText;
-
-    let expanded = false
-</script>
-
-<script>
-	import CollapsibleSection from './CollapsibleSection.svelte'
-</script>
 	
 <header>
     <nav class="pt-3 navbar navbar-expand-lg">
@@ -274,6 +262,7 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 <div class=".collapsible">
     <h3>
         <button aria-expanded={expanded} on:click={() => Education
+		<p>For the education sector, article 211 of the CF/88 established shared responsibility among federal, state, and local governments, leading to unclear responsibilities, policy overlaps, heterogeneity, and insufficient coordination between federative entities in formulating and implementing educational policies. There have been many attempts to instate a national education system, but so far none have been officially implemented. For the health sector, a Unified Health System (SUS) was introduced in 1990.</p>
 <path class="vert" d="M10 1V19" stroke="black" stroke-width="2"/>
 <path d="M1 10L19 10" stroke="black" stroke-width="2"/>
         </button>
@@ -285,22 +274,11 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 </div>
 		  
 <section>
-<CollapsibleSection headerText={'Collapse or expand me!'} >
-	<div class="content">
-			Look at all this fun content
-	</div>
-</CollapsibleSection>
-	
-<CollapsibleSection headerText={'I can collapse or expand too!'} >
-		<div class="content">
-			Look at all this fun content
-	</div>
-</CollapsibleSection>
+
 </section>
 		  
-<h4> Education </h4>
-<p>For the education sector, article 211 of the CF/88 established shared responsibility among federal, state, and local governments, leading to unclear responsibilities, policy overlaps, heterogeneity, and insufficient coordination between federative entities in formulating and implementing educational policies. There have been many attempts to instate a national education system, but so far none have been officially implemented. For the health sector, a Unified Health System (SUS) was introduced in 1990.</p>
 <img src="https://i.ibb.co/kSh310D/Captura-de-Tela-2023-08-04-a-s-14-39-19.png" alt="Brazilian Education System" border="0"> 
+	<br>
 <h3 id="literature">Literature Review</h3>
 <p>Federalism's role in policy-making is explored, considering its complex nature and worldwide diversity in federal structures.</p>
 <h3 id="findings">Key Findings</h3>
