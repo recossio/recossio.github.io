@@ -99,6 +99,16 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 
 </script>
 
+import App from './App.svelte';
+
+const app = new App({
+	target: document.body,
+	props: {
+		name: 'world'
+	}
+});
+
+export default app;
 <script>
     // based on suggestions from:
     // Inclusive Components by Heydon Pickering https://inclusive-components.design/collapsible-sections/
@@ -107,7 +117,7 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
     let expanded = false
 </script>
 
-	<style>
+<style>
   .collapsible {
     border-bottom: 1px solid var(--gray, #eee);
   }
@@ -148,10 +158,6 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 				width: 0.7em;
     }
 </style>
-
-<script>
-	import CollapsibleSection from './CollapsibleSection.svelte'
-</script>
 	
 <header>
     <nav class="pt-3 navbar navbar-expand-lg">
@@ -277,6 +283,10 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 <h3 id="context">Context: The Brazilian Education and Health Systems</h3>
 <p>Brazil's power structure has been divided vertically among various governmental levels since the 1988 Constitution (CF/88), leading to challenges in education and health sectors.</p>	
 
+<script>
+	import CollapsibleSection from './CollapsibleSection.svelte'
+</script>
+		  
 <div class="collapsible">
     <h3>
         <button aria-expanded={expanded} on:click={() => expanded = !expanded}>{headerText}
