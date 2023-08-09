@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-export default app;
 <head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -101,8 +99,77 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 
 </script>
 
+<script>
+    // based on suggestions from:
+    // Inclusive Components by Heydon Pickering https://inclusive-components.design/collapsible-sections/
+    export let headerText;
+
+    let expanded = false
+</script>
+
+<div class="collapsible">
+    <h3>
+        <button aria-expanded={expanded} on:click={() => expanded = !expanded}>{headerText}
+<svg viewBox="0 0 20 20" fill="none" >
+<path class="vert" d="M10 1V19" stroke="black" stroke-width="2"/>
+<path d="M1 10L19 10" stroke="black" stroke-width="2"/>
+</svg>
+        </button>
+    </h3>
+    
+    <div class='contents' hidden={!expanded}>
+        <slot></slot>
+    </div>
+</div>
+
+<style>
+  .collapsible {
+    border-bottom: 1px solid var(--gray, #eee);
+  }
+	
+	h3 {
+		margin: 0;
+	}
+	
+  button {
+    background-color: var(--background, #fff);
+    color: var(--gray-darkest, #282828);
+    display: flex;
+		justify-content: space-between;
+    width: 100%;
+		border: none;
+		margin: 0;
+		padding: 1em 0.5em;
+  }
+
+  button[aria-expanded="true"] {
+    border-bottom: 1px solid var(--gray, #eee);
+  }
+
+    button[aria-expanded="true"] .vert {
+        display: none;
+    }
+
+    button:focus svg{
+        outline: 2px solid;
+    }
+
+    button [aria-expanded="true"] rect {
+        fill: currentColor;
+    }
+
+    svg {
+        height: 0.7em;
+				width: 0.7em;
+    }
+</style>
+
+<script>
+	import CollapsibleSection from './CollapsibleSection.svelte'
+</script>
 
 
+	
 <header>
     <nav class="pt-3 navbar navbar-expand-lg">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
@@ -226,83 +293,7 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
           <p>Let&rsquo;s review the key findings from my master's degree thesis, <strong> Analyzing Inter-Federative Governance in Policy Implementation: The Cases of Primary Healthcare and Basic Education in Brazil.</strong></p>
 <h3 id="context">Context: The Brazilian Education and Health Systems</h3>
 <p>Brazil's power structure has been divided vertically among various governmental levels since the 1988 Constitution (CF/88), leading to challenges in education and health sectors.</p>	
-import App from './App.svelte';
 
-const app = new App({
-	target: document.body,
-	props: {
-		name: 'world'
-	}
-});
-
-<script>
-    // based on suggestions from:
-    // Inclusive Components by Heydon Pickering https://inclusive-components.design/collapsible-sections/
-    export let headerText;
-
-    let expanded = false
-</script>
-
-<div class="collapsible">
-    <h3>
-        <button aria-expanded={expanded} on:click={() => expanded = !expanded}>{headerText}
-<svg viewBox="0 0 20 20" fill="none" >
-<path class="vert" d="M10 1V19" stroke="black" stroke-width="2"/>
-<path d="M1 10L19 10" stroke="black" stroke-width="2"/>
-</svg>
-        </button>
-    </h3>
-    
-    <div class='contents' hidden={!expanded}>
-        <slot></slot>
-    </div>
-</div>
-
-<style>
-  .collapsible {
-    border-bottom: 1px solid var(--gray, #eee);
-  }
-	
-	h3 {
-		margin: 0;
-	}
-	
-  button {
-    background-color: var(--background, #fff);
-    color: var(--gray-darkest, #282828);
-    display: flex;
-		justify-content: space-between;
-    width: 100%;
-		border: none;
-		margin: 0;
-		padding: 1em 0.5em;
-  }
-
-  button[aria-expanded="true"] {
-    border-bottom: 1px solid var(--gray, #eee);
-  }
-
-    button[aria-expanded="true"] .vert {
-        display: none;
-    }
-
-    button:focus svg{
-        outline: 2px solid;
-    }
-
-    button [aria-expanded="true"] rect {
-        fill: currentColor;
-    }
-
-    svg {
-        height: 0.7em;
-				width: 0.7em;
-    }
-</style>
-		  
-<script>
-	import CollapsibleSection from './CollapsibleSection.svelte'
-</script>
 
 <section>
 <CollapsibleSection headerText={'Collapse or expand me!'} >
