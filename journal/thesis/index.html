@@ -68,6 +68,31 @@
         line-height: 1.5;
         text-align: left;
     }
+	/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -220,6 +245,10 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 <h3 id="context">Context: The Brazilian Education and Health Systems</h3>
 <p>Brazil's power structure has been divided vertically among various governmental levels since the 1988 Constitution (CF/88), leading to challenges in education and health sectors.</p>	
 <section>
+	<button type="button" class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum...</p>
+</div>
 <h4 id="education">Education</h4>
    <slot> <p>For the education sector, article 211 of the CF/88 established shared responsibility among federal, state, and local governments, leading to unclear responsibilities, policy overlaps, heterogeneity, and insufficient coordination between federative entities in formulating and implementing educational policies. There have been many attempts to instate a national education system, but so far none have been officially implemented. For the health sector, a Unified Health System (SUS) was introduced in 1990.</p>
         </slot>
