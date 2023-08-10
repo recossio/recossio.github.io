@@ -72,20 +72,65 @@
         line-height: 1.5;
         text-align: left;
     }
-      details > summary {
-  padding: 4px;
-  width: 200px;
-  background-color: #eeeeee;
-  border: none;
-  box-shadow: 1px 1px 2px #bbbbbb;
-  cursor: pointer;
+section {
+  padding-top: 4rem;
+  width: 50%;
+  margin: auto;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+details[open] summary ~ * {
+  animation: open 0.3s ease-in-out;
 }
 
-details > p {
-  background-color: #eeeeee;
-  padding: 4px;
-  margin: 0;
-  box-shadow: 1px 1px 2px #bbbbbb;
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-top: 1px solid black;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 300;
+  list-style: none;
+}
+
+details summary:after {
+  content: "+";
+  color: black;
+  position: absolute;
+  font-size: 1.75rem;
+  line-height: 0;
+  margin-top: 0.75rem;
+  right: 0;
+  font-weight: 200;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+details[open] summary:after {
+  transform: rotate(45deg);
+  font-size: 2rem;
+}
+details summary {
+  outline: 0;
+}
+details p {
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+  padding-top: 1rem;
 }
 </style>
 
@@ -239,6 +284,7 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
           <article class="page-content  p-2">
           <p>Let&rsquo;s review the key findings from my master's degree thesis, <strong> Analyzing Inter-Federative Governance in Policy Implementation: The Cases of Primary Healthcare and Basic Education in Brazil.</strong></p>
 <h3 id="context">Context: The Brazilian Education and Health Systems</h3>
+<section>
 <p>Brazil's power structure has been divided vertically among various governmental levels since the 1988 Constitution (CF/88), leading to challenges in education and health sectors.</p>
 <details>
     <summary><strong>Education</strong></summary>
@@ -252,7 +298,7 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 <p>                For the health sector, a Unified Health System (SUS) was introduced in 1990.
 </p>
 </details>
-
+</section>
 <h3 id="literature">Literature Review</h3>
 <p>Federalism's role in policy-making is explored, considering its complex nature and worldwide diversity in federal structures.</p>
 <h3 id="findings">Key Findings</h3>
