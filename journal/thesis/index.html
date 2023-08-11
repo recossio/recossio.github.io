@@ -136,7 +136,9 @@ details p {
 	background-color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-	display: flex;
+	display: flex-grow: 0;     /* do not grow   - initial value: 0 */
+flex-shrink: 0;   /* do not shrink - initial value: 1 */
+flex-basis: 25em; /* width/height  - initial value: auto */
 	max-width: 100%;
 	margin: 20px;
 	overflow: hidden;
@@ -173,7 +175,7 @@ details p {
 
 .course-info {
 	padding: 30px;
-	position: relative;
+	position: static;
 	width: 100%;
 }
 
