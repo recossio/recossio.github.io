@@ -407,169 +407,65 @@ details p {
   color: var(--color);
 }
 
-.wrapper{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    overflow: auto;
-      
-    & ul{
-      position: relative;
-      display: block;
-      margin: 0 auto;
-      white-space: nowrap;
-      list-style: none;
-      
-      & li{
-        display: inline-block;
-        vertical-align: top;
-      }
-      
-    }
-
-    //basic display toggling - we've opted for a more animated approach
-*& [type="checkbox"], & .more {
-      display: none;
-    }
-
-    & input:checked ~ ul *{
-      display: none;
-    }
-
-    & input:checked ~ ul .more{
-      display: block;
-    }*/
-
-  }
-  
-@include scrollbars(2px, white, transparent);
-
-@media (min-width: 480px) {
-  :root {
-    font-size: calc(0.75rem + ((1vw - 4.8px) * 0.5556));
-  }
-}
-@media (min-width: 1920px) {
-  :root {
-    font-size: 20px;
-  }
+.diagram {
+    color: white;
+    font-family: 'Questrial', sans-serif;
+    background: #333;
 }
 
-//very opinionated reset
-div, ul, li{
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  &:before, &:after{
-    content: '';
+.diagram .message {
     position: absolute;
-    display: block;
-    box-sizing: border-box;
-  }
-}
-  
-  & .message{
-    position: absolute;
-    right:  0.5vw;
+    right: 0.5vw;
     bottom: 1vw;
     max-width: 30vw;
     font-size: 0.75vmin;
     font-family: "Open Sans", sans-serif;
     color: white;
-
-    & a{
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-      &:hover{
-        border-width: 3px;
-      }
-    }
-
-  }
-    
-  & .wrapper{
-      
-    & ul{
-
-      & > li{
-        margin: 1em 0;
-        padding: 1em;
-        line-height: 1.5em;
-        transition: all 0.5s ease;
-        &:before{
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          background: grey;
-        }
-        &:first-of-type:before{
-          left: 50%;
-          width: 50%;
-        }
-        &:last-of-type:before{
-          width: 50%;
-        }
-        &:only-of-type:before{
-          width: 10%;
-          left: 45%;
-        }
-        &.noline:before{
-          background: transparent;
-        }
-
-        & label{
-          padding: 0.5em 1em;
-          border: 1px solid grey;
-          cursor: pointer;
-        }
-
-      }
-
-      & [type="checkbox"] {
-        display: none;
-      }
-
-      & .more {
-        opacity: 0;
-        display: block;
-        width: 0;
-        height: 0;
-        padding: 0;
-        margin-left: 50%;
-        transition: all 0.25s ease;
-      }
-
-      & input:checked ~ ul *{
-        opacity: 0;
-        max-width: 1px;
-        max-height: 1px;
-        padding: 0;
-      }
-
-      & input:checked ~ ul .more{
-        opacity: 1;
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: 0;
-        transition: all 0.01s;
-      }
-      
-    }
-  
-
-  }
-  
 }
+
+.diagram .message a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+}
+
+.diagram .message a:hover {
+    border-width: 3px;
+}
+
+.diagram .wrapper {
+    position: relative;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    text-align: center;
+    overflow: auto;
+}
+
+.diagram div, .diagram ul, .diagram li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.diagram div:before, .diagram div:after, .diagram ul:before, .diagram ul:after, .diagram li:before, .diagram li:after {
+    content: '';
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+}
+
+.diagram .wrapper ul li {
+    margin: 1em 0;
+    padding: 1em;
+    line-height: 1.5em;
+    transition: all 0.5s ease;
+}
+
 
 </style>
 
@@ -984,9 +880,9 @@ This section presents a brief review of the literature on inter-federative gover
 </blockquote>
 <br>
 
-<div class="wrapper">
-    <ul>
-      <li class="noline">
+<div class="diagram">    
+   <ul>
+      <li>
         <h3>Research Methods</h3> 
          <ul>
             <li>
