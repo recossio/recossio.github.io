@@ -405,32 +405,57 @@ details p {
 }
 .credits a {
   color: var(--color);
-}
+}	
 
-.typing-demo {
-  width: 22ch;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-  white-space: nowrap;
+.content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-wrapper {
+  font-size: 40px;
+  color:#aaa;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider{
+  height: 50px;
+  padding-left:15px;
   overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospace;
-  font-size: 2em;
 }
-
-@keyframes typing {
-  from {
-    width: 0
-  }
+.slider div {
+  color:#fff;
+  height: 50px;
+  margin-bottom: 50px;
+  padding: 2px 15px;
+  text-align: center;
+  box-sizing: border-box;
 }
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
+.slider-text1 {
+  background: lightgreen;
+  animation: slide 5s linear infinite;
 }
-
+.slider-text2 {
+  background: skyblue;
+}
+.slider-text3 {
+  background: lightcoral;
+}
+@keyframes slide {
+  0% {margin-top:-300px;}
+  5% {margin-top:-200px;}
+  33% {margin-top:-200px;}
+  38% {margin-top:-100px;}
+  66% {margin-top:-100px;}
+  71% {margin-top:0px;}
+  100% {margin-top:0px;}
+}
 	
-
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -843,11 +868,17 @@ This section presents a brief review of the literature on inter-federative gover
 </p>
 </blockquote>
 <br>
+<div class="content">
+        <div class="slider-wrapper">
+          Research
+          <div class="slider">
+              <div class="slider-text1">Methods</div>
+              <div class="slider-text2">Logic</div>
+              <div class="slider-text3">Analysis</div>
+          </div>
+        </div>       
+      </div>
 
-<div class="typing-demo">
-<h3>Research Methods</h3> 
-</div>
-    
          <ul>
             <li>
               <label for="item1">Hypothesis</label><input id="item1" type="checkbox">
