@@ -431,7 +431,7 @@ details p {
     }
 
     //basic display toggling - we've opted for a more animated approach
-    /*& [type="checkbox"], & .more {
+*& [type="checkbox"], & .more {
       display: none;
     }
 
@@ -445,41 +445,6 @@ details p {
 
   }
   
-
-
-/* MAKE-UP - Pure esthetics*/
-
-@import url('https://fonts.googleapis.com/css?family=Questrial');
-
-@mixin scrollbars($size, $foreground-color, $background-color) {
-  ::-webkit-scrollbar-button{
-    display: none;
-  }
-  ::-webkit-scrollbar {
-    width:  $size;
-    height: $size;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: $foreground-color;
-    border: 1px solid lighten($foreground-color, 10%);
-    cursor: pointer;
-  }
-  ::-webkit-scrollbar-track {
-    background: $background-color;
-    width: calc(#{$size} * 2);
-    border: 2px solid lighten($background-color, 10%);
-  }
-  ::-webkit-scrollbar-track-piece {
-    background: $background-color;
-    width: calc(#{$size} / 2);
-    border: 2px solid lighten($background-color, 10%);
-  }
-  body {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
-  }
-}
-
 @include scrollbars(2px, white, transparent);
 
 @media (min-width: 480px) {
@@ -508,11 +473,6 @@ div, ul, li{
     box-sizing: border-box;
   }
 }
-
-body{
-  color: white;
-  font-family: 'Questrial', sans-serif;
-  background: #333;
   
   & .message{
     position: absolute;
