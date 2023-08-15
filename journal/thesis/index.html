@@ -407,25 +407,102 @@ details p {
   color: var(--color);
 }
 
-.text-wrap {
-  white-space: normal;
+.column {
+  position: relative;
+  float: left;
+  padding: 0em 3em;
+  opacity: 0;
+  
+}
+.column.zeroth {
+  animation: fadeIn0 10s infinite;
+}
+.column.first {
+  animation: fadeIn1 10s infinite;
+}
+.column.second {
+  animation: fadeIn2 10s infinite;
+}
+.ket {
+  display: block;
+}
+.split {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  transform: rotate(45deg);
+  overflow: auto;
+}
+.first.column .split {
+  top: 7em;
+  left: -10px; 
+}
+.second.column .split:first-child {
+  top: 3em;
+  left: -10px; 
+}
+.second.column .split:nth-child(2) {
+  top: 12em;
+  left: -10px; 
+}
+.tree-diagram {
+  display: inline-block;
+  margin: 3em auto;
 }
 
-.text-wrap {
-  white-space: normal;
+$spread: 18em;
+
+.column.zeroth .ket {
+  height: $spread;
+  line-height: $spread;
+}
+.column.first .ket {
+  height: $spread/2;
+  line-height: $spread/2;
+}
+.column.second .ket {
+  height: $spread/4;
+  line-height: $spread/4;
+}
+.column.second .purple.ket {
+  animation: interfere 10s infinite ease-in-out;
+  /* animation-delay: 6s; */
 }
 
-.level1, .level2 {
-    display: none;
+@keyframes fadeIn0 {
+  0% { opacity: 0 }
+  10% { opacity: 1 }
+  80% { opacity: 1 }
+  90% { opacity: 0 }
+  100% { opacity: 0 }
 }
-.row.level1:hover .level2 {
-    display: block;
+@keyframes fadeIn1 {
+  0% { opacity: 0 }
+  10% { opacity: 0 }
+  20% { opacity: 1 }
+  80% { opacity: 1 }
+  90% { opacity: 0 }
+  100% { opacity: 0 }
 }
-.level0:hover .level1 {
-    display: block;
+@keyframes fadeIn2 {
+  0% { opacity: 0 }
+  20% { opacity: 0 }
+  30% { opacity: 1 }
+  80% { opacity: 1 }
+  90% { opacity: 0 }
+  100% { opacity: 0 }
 }
-
-
+@keyframes interfere {
+  0% { opacity: 1 }
+  50% { opacity: 1 }
+  52% { color: white; opacity: 1 }
+  56% { color: red; opacity: 1 }
+  60% { opacity: 1 }
+  70% { opacity: 0 }
+  100% { opacity: 0 }
+}
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -454,6 +531,21 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 
 </script>
 
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML.js">
+	</script>
+	<!-- Quantum Mechanics Typography Macros -->
+	<script type='text/x-mathjax-config'>
+  MathJax.Hub.Config({
+  TeX: {
+     Macros: {
+      abs: ['\\left|{#1}\\right|',1],
+      bra: ['\\langle{#1}|',1],
+      ket: ['{\\,|\\,{#1}\\rangle}',1],
+      braket: ['\\langle{#1}|{#2}\\rangle',2]
+    }
+  }});
+	</script>
 
 
 <header>
@@ -823,59 +915,24 @@ This section presents a brief review of the literature on inter-federative gover
 </p>
 </blockquote>
 <br>
-    <div class="container">
-  <h2 class="page-header">Bootstrap Data Flow Diagram</h2>
 
-  <div class="col-xs-12 level0">
-    <p class="lead text-center bg-info btn text-info center-block">What type of email do you want to send?</p>
-    <div class="row">
-      <div class="col-xs-6 text-center">
-        <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
-      </div>
-      <div class="col-xs-6 text-center">
-        <p class="btn">
-          <span class="glyphicon glyphicon-arrow-down"></span></p>
-      </div>
-    </div>
-    <div class="row level1">
-      <div class="col-xs-6 text-center">
-        <p class="center-block"><span class="btn btn-warning btn-lg">Designing</span></p>
-        <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-        <p class="center-block bg-info text-info btn">Is it directly related to fundraising?</p>
-        <div class="row">
-          <div class="col-xs-6 text-center">
-            <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
-          </div>
-          <div class="col-xs-6 text-center">
-            <p class="btn">
-              <span class="glyphicon glyphicon-arrow-down"></span></p>
-          </div>
-        </div>
-        <div class="row level2">
-          <div class="col-xs-6">
-            <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
-            <p class="btn">
-              <span class="glyphicon glyphicon-arrow-down"></span></p>
-            <p class="bg-success text-success btn text-wrap">Okay! You can proceed to step 3. </p>
-
-          </div>
-          <div class="col-xs-6 text-center">
-            <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
-            <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-            <p class="btn bg-danger text-danger text-wrap">Content must be directly related to fundraising to use this service.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6 text-center">
-        <p class="center-block"><span class="btn btn-success btn-lg">Back-End</span></p>
-        <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-
-        <p class="bg-success text-success btn">Okay! Proceed to step 3.</p>
-      </div>
-    </div>
-
+<div class="tree-diagram">
+  <div class="column zeroth">
+    <span class="orange ket">+ \( \ket{\textrm{Orange}} \)</span>
   </div>
-
+  <div class="column first">
+    <div class="split"></div>
+    <span class="orange ket">+ \( \ket{\textrm{Orange}} \)</span>
+    <span class="purple ket">+ \( \ket{\textrm{Purple}} \)</span>
+  </div>
+  <div class="column second">
+    <div class="split"></div>
+    <div class="split"></div>
+    <span class="orange ket">+ \( \ket{\textrm{Orange}} \)</span>
+    <span class="purple ket">+ \( \ket{\textrm{Purple}} \)</span>
+    <span class="purple ket">- \( \ket{\textrm{Purple}} \)</span>
+    <span class="orange ket">+ \( \ket{\textrm{Orange}} \)</span>
+  </div>
 </div>
 
 <h3 id="findings">Key Findings</h3>
