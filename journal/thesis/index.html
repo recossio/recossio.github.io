@@ -407,65 +407,36 @@ details p {
   color: var(--color);
 }
 
-.diagram {
-    color: white;
-    font-family: 'Questrial', sans-serif;
-    background: #333;
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
 }
 
-.diagram .message {
-    position: absolute;
-    right: 0.5vw;
-    bottom: 1vw;
-    max-width: 30vw;
-    font-size: 0.75vmin;
-    font-family: "Open Sans", sans-serif;
-    color: white;
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
 }
 
-.diagram .message a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid #444;
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
 }
 
-.diagram .message a:hover {
-    border-width: 3px;
-}
-
-.diagram .wrapper {
-    position: relative;
-    top: 60px;
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - 60px);
-    text-align: center;
-    overflow: auto;
-}
-
-.diagram div, .diagram ul, .diagram li {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.diagram div:before, .diagram div:after, .diagram ul:before, .diagram ul:after, .diagram li:before, .diagram li:after {
-    content: '';
-    position: absolute;
-    display: block;
-    box-sizing: border-box;
-}
-
-.diagram .wrapper ul li {
-    margin: 1em 0;
-    padding: 1em;
-    line-height: 1.5em;
-    transition: all 0.5s ease;
-}
-
+	
 
 </style>
 
@@ -880,10 +851,12 @@ This section presents a brief review of the literature on inter-federative gover
 </blockquote>
 <br>
 
-<div class="diagram">    
-   <ul>
-      <li>
-        <h3>Research Methods</h3> 
+<div class="wrapper">
+    <div class="typing-demo">
+      <h3>Research Methods</h3> 
+    </div>
+</div>
+        
          <ul>
             <li>
               <label for="item1">Hypothesis</label><input id="item1" type="checkbox">
