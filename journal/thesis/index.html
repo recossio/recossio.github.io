@@ -407,46 +407,38 @@ details p {
   color: var(--color);
 }	
 
-.slider-wrapper {
-  font-size: 40px;
-  color:#aaa;
-  font-weight: bold;
-  text-transform: uppercase;
-  align-items: center;
-  justify-content: center;
+/* Styles specific to the .interactive-list elements */
+.interactive-list {
+    list-style-type: none;
+    padding-left: 20px;
 }
-.slider{
-  height: 50px;
-  padding-left:15px;
-  overflow: hidden;
+
+.interactive-list > li > ul {
+    display: none; /* Hide nested lists by default */
 }
-.slider div {
-  color:#fff;
-  height: 50px;
-  margin-bottom: 50px;
-  padding: 2px 15px;
-  text-align: center;
-  box-sizing: border-box;
+
+label.toggle:active + .interactive-list > li > ul {
+    display: block; /* Toggle the visibility of the nested list when the label is clicked */
 }
-.slider-text1 {
-  background: lightgreen;
-  animation: slide 5s linear infinite;
+
+label.toggle:not(:active) + .interactive-list > li > ul > .more {
+    display: inline; /* Show the ellipsis when the nested list is hidden */
 }
-.slider-text2 {
-  background: skyblue;
+
+/* Styles for the labels and other elements */
+label.toggle {
+    cursor: pointer;
 }
-.slider-text3 {
-  background: lightcoral;
+
+.more {
+    display: none; /* Hide the ellipsis by default */
 }
-@keyframes slide {
-  0% {margin-top:-300px;}
-  5% {margin-top:-200px;}
-  33% {margin-top:-200px;}
-  38% {margin-top:-100px;}
-  66% {margin-top:-100px;}
-  71% {margin-top:0px;}
-  100% {margin-top:0px;}
+
+/* Style the label to make it more interactive */
+label.toggle:hover {
+    background-color: #f5f5f5;
 }
+
 	
 </style>
 
@@ -860,72 +852,69 @@ This section presents a brief review of the literature on inter-federative gover
 </p>
 </blockquote>
 <br>
-<div class="slider-wrapper">
-          Research
-          <div class="slider">
-              <div class="slider-text1">Methods</div>
-              <div class="slider-text2">Logic</div>
-              <div class="slider-text3">Analysis</div>
-          </div>
-        </div>       
 
-         <ul>
-            <li>
-              <label for="item1">Hypothesis</label><input id="item1" type="checkbox">
-              <ul>
+<h3 id="findings">Research Methods</h3>
+<div>
+    <ul class="interactive-list">
+        <li>
+            <label class="toggle">Hypothesis</label>
+            <ul>
                 <span class="more">&hellip;</span>
-                <li><label for="item1.1">"If an inter-federative collaboration regime is formally defined and legalized to assist in a country's policy implementation, 
-then the different levels of federal power work together more efficiently and effectively to achieve it, because there is a clear and institutionalized governance process enabling them to do so"</label><input id="item1.1" type="checkbox"></li>
-              </ul>
-            </li>
-            <li>
-              <label for="item2">Units of Analysis</label><input id="item2" type="checkbox">
-              <ul>
-                <span class="more">&hellip;</span>
-                <li>
-                  <label for="item2.1">Federative System</label><input id="item2.1" type="checkbox"></li>
-		   <span class="more">&hellip;</span>
-                    <li><label for="item2.1.1">Federal, State and Municipal</label><input id="item2.1.1" type="checkbox"></li>
-                  </ul>
-                </li>
-		<ul>
-                <li><label for="item2.2">Education System</label><input id="item2.2" type="checkbox"></li>
-		 <span class="more">&hellip;</span>
-                <li><label for="item2.2.1">Basic Education</label><input id="item2.2.1" type="checkbox"></li>
-		 </ul>
-		 <ul>
-		<li><label for="item2.3">Health System</label><input id="item2.3" type="checkbox"></li>
-		 <span class="more">&hellip;</span>
-                <li><label for="item2.3.1">Primary Care</label><input id="item2.3.1" type="checkbox"></li>
-              </ul>
-            <li>
-              <label for="item4">Logic</label><input id="item4" type="checkbox" checked>
-              <ul>
+                <li>"If an inter-federative collaboration regime is formally defined and legalized to assist in a country's policy implementation, then the different levels of federal power work together more efficiently and effectively to achieve it, because there is a clear and institutionalized governance process enabling them to do so"</li>
+            </ul>
+        </li>
+        <li>
+            <label class="toggle">Units of Analysis</label>
+            <ul>
                 <span class="more">&hellip;</span>
                 <li>
-                  <label for="item4.1">Not formalized x Unified</label><input id="item4.1" type="checkbox">
-                  <ul>
-                    <span class="more">&hellip;</span>
-                    <li><label for="item4.1.1">De Jure</label><input id="item4.1.1" type="checkbox"></li>
-                    <li><label for="item4.1.2">De Facto</label><input id="item4.1.2" type="checkbox"></li>
-                  </ul>
+                    <label class="toggle">Federative System</label>
+                    <ul>
+                        <span class="more">&hellip;</span>
+                        <li>Federal, State and Municipal</li>
+                    </ul>
                 </li>
                 <li>
-                  <label for="item4.3">Policy Aspects</label><input id="item4.3" type="checkbox">
-                  <ul>
-                    <span class="more">&hellip;</span>
-                    <li><label for="item4.3.1">Strategic Management</label><input id="item4.3.1" type="checkbox"></li>
-		    <li><label for="item4.3.2">Infrastructure</label><input id="item4.3.2" type="checkbox"></li>
-                    <li><label for="item4.3.3">Human Resources</label><input id="item4.3.3" type="checkbox"></li>
-                  </ul>
+                    <label class="toggle">Education System</label>
+                    <ul>
+                        <span class="more">&hellip;</span>
+                        <li>Basic Education</li>
+                    </ul>
                 </li>
-               </ul>
-             </li>
-        </ul>
-      </li>
+                <li>
+                    <label class="toggle">Health System</label>
+                    <ul>
+                        <span class="more">&hellip;</span>
+                        <li>Primary Care</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label class="toggle">Logic</label>
+            <ul>
+                <span class="more">&hellip;</span>
+                <li>
+                    <label class="toggle">Not formalized x Unified</label>
+                    <ul>
+                        <span class="more">&hellip;</span>
+                        <li>De Jure</li>
+                        <li>De Facto</li>
+                    </ul>
+                </li>
+                <li>
+                    <label class="toggle">Policy Aspects</label>
+                    <ul>
+                        <span class="more">&hellip;</span>
+                        <li>Strategic Management</li>
+                        <li>Infrastructure</li>
+                        <li>Human Resources</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
-
 		
 <h3 id="findings">Key Findings</h3>
 <p>The thesis investigates public governance coordination in Brazil's federalism, focusing on healthcare and education.</p>
