@@ -619,6 +619,87 @@ background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)
     box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
   }
 }
+$border: #ddd;
+$border-hover: #aaa;
+$bg-hover: #eee;
+$text: #888;
+$text-hover: #000;
+$ident: 20px;
+$left: -($ident);
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.wtree {
+  li {
+    list-style-type: none;
+    margin:10px 0 10px 10px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top:-10px;
+      left:$left;
+      border-left: 1px solid $border;
+      border-bottom:1px solid $border;
+      width:$ident;
+      height:15px;
+    }
+    &:after {
+      position:absolute;
+      content:"";
+      top:5px;
+      left:$left;
+      border-left: 1px solid $border;
+      border-top:1px solid $border;
+      width:$ident;
+      height:100%;
+    }
+    &:last-child:after {
+      display:none;
+    }
+    span {
+      display:block;
+      border: 1px solid $border;
+      padding:10px;
+      color:$text;
+      text-decoration:none;
+    }
+  }
+}
+
+.wtree {
+  li {
+    span {
+      &:hover,
+      &:focus {
+        background: $bg-hover; 
+        color: $text-hover; 
+        border: 1px solid $border-hover;
+        & + ul {
+          li {
+            span {
+              background: $bg-hover; 
+              color: $text-hover; 
+              border: 1px solid $border-hover;
+            }
+          }
+        }
+      }
+
+      &:hover + ul, 
+      &:focus + ul {
+        li {
+          &:after,&:before {
+            border-color:  $border-hover;
+          }
+        }
+      }
+    }
+  }
+}
 
 
 </style>
@@ -1058,42 +1139,38 @@ enabling them to do so.</span>
 <br>
 <details>
 <summary><strong>Units of Analysis</strong></summary>
-
-<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-<div class="col-5">
-<div class="card card-block card-4">
-<p>
-<ul>
-<h3><font color="#FFFFFF">Federative System</font></h3>
-<span class="highlight">Federal, State and Municipal</span>
+<ul class="wtree">
+  <li>
+    <span>Federative System</span>
+    <ul>
+      <li>
+        <span>Federal</span>
+      </li>
+      <li>
+        <span>State</span>
+      </li>
+      <li>
+        <span>Municipal</span>
+      </li>
+      </li>
+    </ul>
+  <li>
+    <span>Education System</span>
+    <ul>
+      <li>
+        <span>Basic Education</span>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <span>Health System</span>
+    <ul>
+      <li>
+        <span>Basic Care</span>
+      </li>
+    </ul>
+  </li>
 </ul>
-</p>
-</div>
-</div>
-
-<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-<div class="col-5">
-<div class="card card-block card-6">
-<p>
-<ul>
-<h3><font color="#FFFFFF">Education System</font></h3>
-<span class="highlight">Basic Education</span>
-</ul>
-</p>
-</div>
-</div>
-
-<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-<div class="col-5">
-<div class="card card-block card-8">
-<p>
-<ul>
-<h3><font color="#FFFFFF">Health System</font></h3>
-<span class="highlight">Basic Care</span>
-</ul>
-</p>
-</div>
-</div>
 
 </details>
 <br>
