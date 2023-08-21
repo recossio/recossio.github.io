@@ -407,38 +407,6 @@ details p {
   color: var(--color);
 }	
 
-/* Styles specific to the .interactive-list elements */
-.interactive-list {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-.interactive-list > li > ul {
-    display: none; /* Hide nested lists by default */
-}
-
-label.toggle:active + .interactive-list > li > ul {
-    display: block; /* Toggle the visibility of the nested list when the label is clicked */
-}
-
-label.toggle:not(:active) + .interactive-list > li > ul > .more {
-    display: inline; /* Show the ellipsis when the nested list is hidden */
-}
-
-/* Styles for the labels and other elements */
-label.toggle {
-    cursor: pointer;
-}
-
-.more {
-    display: none; /* Hide the ellipsis by default */
-}
-
-/* Style the label to make it more interactive */
-label.toggle:hover {
-    background-color: #f5f5f5;
-}
-
 	
 </style>
 
@@ -467,22 +435,6 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
     }
 
 </script>
-
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML.js">
-	</script>
-	<!-- Quantum Mechanics Typography Macros -->
-	<script type='text/x-mathjax-config'>
-  MathJax.Hub.Config({
-  TeX: {
-     Macros: {
-      abs: ['\\left|{#1}\\right|',1],
-      bra: ['\\langle{#1}|',1],
-      ket: ['{\\,|\\,{#1}\\rangle}',1],
-      braket: ['\\langle{#1}|{#2}\\rangle',2]
-    }
-  }});
-	</script>
 
 
 <header>
@@ -852,19 +804,20 @@ This section presents a brief review of the literature on inter-federative gover
 </p>
 </blockquote>
 <br>
-
-<h3 id="findings">Research Methods</h3>
 <div>
-    <ul class="interactive-list">
-        <li>
-            <label class="toggle">Hypothesis</label>
-            <ul>
+<h3 id="findings">Research Methods</h3>
+<details>
+<summary><strong>Hypothesis</strong></summary>
+<blockquote>
                 <span class="more">&hellip;</span>
                 <li>"If an inter-federative collaboration regime is formally defined and legalized to assist in a country's policy implementation, then the different levels of federal power work together more efficiently and effectively to achieve it, because there is a clear and institutionalized governance process enabling them to do so"</li>
-            </ul>
-        </li>
+</blockquote>
+</details>
+<br>
+<details>
+<summary><strong>Units of Analysis</strong></summary>
         <li>
-            <label class="toggle">Units of Analysis</label>
+            <label class="toggle"></label>
             <ul>
                 <span class="more">&hellip;</span>
                 <li>
@@ -890,8 +843,10 @@ This section presents a brief review of the literature on inter-federative gover
                 </li>
             </ul>
         </li>
-        <li>
-            <label class="toggle">Logic</label>
+</details>
+<br>
+<details>
+<summary><strong>Logic</strong></summary>
             <ul>
                 <span class="more">&hellip;</span>
                 <li>
@@ -912,8 +867,7 @@ This section presents a brief review of the literature on inter-federative gover
                     </ul>
                 </li>
             </ul>
-        </li>
-    </ul>
+</details>
 </div>
 		
 <h3 id="findings">Key Findings</h3>
