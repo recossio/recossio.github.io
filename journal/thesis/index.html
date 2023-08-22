@@ -620,127 +620,194 @@ background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)
   }
 }
 
-#tree {
-  display: inline-block;
-  padding: 10px;
-}
+.treeview {
+  //Variables
+  $_treeview-level-size: 55px;
+  //General styles for bootstrap
+  .btn-default {
+    border-color: $border-color;
 
-#tree * {
-  box-sizing: border-box;
-}
+    &:hover {
+      background-color: #f7faea;
+      color: $primary-color;
+    }
+  }
+  // Targetting the HTML Elements for treeview
+  ul {
+    list-style: none;
+    padding-left: 32px;
 
-#tree .branch {
-  padding: 5px 0 5px 20px;
-}
+    li {
+      padding: 50px 0px 0px 35px;
+      position: relative;
 
-#tree .branch:not(:first-child) {
-  margin-left: 170px;
-}
+      &:before {
+        content: "";
+        position: absolute;
+        top: -26px;
+        left: -31px;
+        border-left: 2px dashed #a2a5b5;
+        width: 1px;
+        height: 100%;
+      }
 
-#tree .branch:not(:first-child):after {
-  content: "";
-  width: 20px;
-  border-top: 1px solid #ccc;
-  position: absolute;
-  left: 150px;
-  top: 50%;
-  margin-top: 1px;
-}
+      &:after {
+        content: "";
+        position: absolute;
+        border-top: 2px dashed #a2a5b5;
+        top: 70px;
+        left: -30px;
+        width: 65px;
+      }
 
-.entry {
-  position: relative;
-  min-height: 42px;
-  display: block;
-}
+      &:last-child:before {
+        top: -22px;
+        height: 90px;
+      }
+    }
+  }
+  // First Level Elements
+  & > ul {
+  & > li {
+    &:after,
+    &:last-child:before {
+      content: unset;
+    }
 
-.entry:before {
-  content: "";
-  height: 100%;
-  border-left: 1px solid #ccc;
-  position: absolute;
-  left: -20px;
-}
+    &:before {
+      top: 90px;
+      left: 36px;
+    }
 
-.entry:first-child:after {
-  height: 10px;
-  border-radius: 10px 0 0 0;
-}
+    &:not(:last-child) > ul > li {
+      &:before {
+        content: unset;
+      }
+    }
 
-.entry:first-child:before {
-  width: 10px;
-  height: 50%;
-  top: 50%;
-  margin-top: 1px;
-  border-radius: 10px 0 0 0;
+    & > .treeview__level {
+      &:before {
+        height: $_treeview-level-size + 5;
+        width: $_treeview-level-size + 5;
+        top: -9.5px;
+        background-color: #54a6d9;
+        border: 7.5px solid #d5e9f6;
+        font-size: 22px;
+      }
+    }
+    
+    & > ul {
+      padding-left: 34px;
+    }
+  }
+  
 }
+  // Treeview Components
+  &__level {
+    padding: 7px;
+    padding-left: ($_treeview-level-size / 2) + 15;
+    display: inline-block;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 1px solid $border-color;
+    position: relative;
+    z-index: 1;
 
-.entry:after {
-  content: "";
-  width: 20px;
-  transition: border 0.5s;
-  border-top: 1px solid #ccc;
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  margin-top: 1px;
-}
+    &:before {
+      content: attr(data-level);
+      position: absolute;
+      left: -($_treeview-level-size / 2);
+      top: -6.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $_treeview-level-size;
+      width: $_treeview-level-size;
+      border-radius: 50%;
+      border: 7.5px solid #eef6d5;
+      background-color: $primary-color;
+      color: #fff;
+      font-size: 20px;
+    }
 
-.entry:last-child:before {
-  width: 10px;
-  height: 50%;
-  border-radius: 0 0 0 10px;
-}
-.entry:last-child:after {
-  height: 10px;
-  border-top: none;
-  transition: border 0.5s;
-  border-bottom: 1px solid #ccc;
-  border-radius: 0 0 0 10px;
-  margin-top: -9px;
-}
+    &-btns {
+      margin-left: 15px;
+      display: inline-block;
+      position: relative;
+    }
 
-.entry:only-child:after {
-  width: 10px;
-  height: 0px;
-  margin-top: 1px;
-  border-radius: 0px;
-}
+    .level {
+      &-same,
+      &-sub {
+        position: absolute;
+        display: none;
+        transition: opacity 250ms cubic-bezier(0.7, 0, 0.3, 1);
+        &.in {
+          display: block;
+          .btn-default {
+            background-color: #faeaea;
+            color: #da5555;
+          }
+        }
+      }
 
-.entry:only-child:before {
-  display: none;
-}
+      &-same {
+        top: 0;
+        left: 45px;
+      }
+      &-sub {
+        top: 42px;
+        left: 0px;
+      }
+      &-remove {
+        display: none;
+      }
+    }
 
-.entry span {
-  border: 1px solid #ccc;
-  display: block;
-  min-width: 150px;
-  padding: 5px 10px;
-  line-height: 20px;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -15px;
-  color: #666;
-  font-family: arial, verdana, tahoma;
-  font-size: 14px;
-  display: inline-block;
-  border-radius: 5px;
-  transition: all 0.5s;
-}
+    &.selected {
+      background-color: #f9f9fb;
+      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
 
-#tree .entry span:hover,
-#tree .entry span:hover + .branch .entry span {
-  background: #e6e6e6;
-  color: #000;
-  border-color: #a6a6a6;
-}
+      .level {
+        &-remove {
+          display: inline-block;
+        }
+        &-add {
+          display: none;
+        }
+        &-same,
+        &-sub {
+          display: none;
+        }
+      }
+    }
+  }
 
-#tree .entry span:hover + .branch .entry::after,
-#tree .entry span:hover + .branch .entry::before,
-#tree .entry span:hover + .branch::before,
-#tree .entry span:hover + .branch .branch::before {
-  border-color: #a6a6a6;
+  .level-title {
+    cursor: pointer;
+    user-select: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--mapview {
+    ul {
+      justify-content: center;
+      display: flex;
+
+      li {
+        &:before {
+          content: unset;
+        }
+
+        &:after {
+          content: unset;
+        }
+      }
+    }
+  }
 }
 </style>
 
@@ -1185,40 +1252,124 @@ To examine the impact of different governmental collaboration structures on poli
 the thesis' units of analysis breaks down three main systems, namely, the general Brazilian federative system; the Brazilian Unified Health System (SUS) and the Brazilian education system.	
 </p>
 </blockquote>
-<div class="courses-container">
-<div class="course">
-<div id="tree">
-  <div class="branch">
-    <div class="entry">
-<span>Federative System</span>
-  <div class="branch">
-    <div class="entry">
-          <span>Federal</span> 
-<div class="entry">
-	<span>State</span>
-<div class="entry">
-	<span>Municipal</span>
-              </div>
+<div class="treeview js-treeview">
+  <ul>
+    <li>
+      <div class="treeview__level" data-level="A">
+        <span class="level-title">Level A</span>
+        <div class="treeview__level-btns">
+          <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+          <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+          <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+          <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+        </div>
+      </div>
+      <ul>
+
+        <li>
+          <div class="treeview__level" data-level="B">
+            <span class="level-title">Level A</span>
+            <div class="treeview__level-btns">
+              <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+              <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+              <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+              <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
             </div>
           </div>
+          <ul>
+
+            <li>
+              <div class="treeview__level" data-level="C">
+                <span class="level-title">Level A</span>
+                <div class="treeview__level-btns">
+                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+                </div>
+              </div>
+              <ul>
+
+                <li>
+                  <div class="treeview__level" data-level="D">
+                    <span class="level-title">Level A</span>
+                    <div class="treeview__level-btns">
+                      <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+                      <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+                      <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+                      <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+                    </div>
+                  </div>
+                  <ul>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="treeview__level" data-level="C">
+                <span class="level-title">Level A</span>
+                <div class="treeview__level-btns">
+                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+                </div>
+              </div>
+              <ul>
+              </ul>
+            </li>
+
+            <li>
+              <div class="treeview__level" data-level="C">
+                <span class="level-title">Level A</span>
+                <div class="treeview__level-btns">
+                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+                </div>
+              </div>
+              <ul>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <div class="treeview__level" data-level="B">
+            <span class="level-title">Level A</span>
+            <div class="treeview__level-btns">
+              <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+              <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+              <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+              <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
+            </div>
+          </div>
+          <ul>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+
+<template id="levelMarkup">
+    <li>
+      <div class="treeview__level" data-level="A">
+        <span class="level-title">Level A</span>
+        <div class="treeview__level-btns">
+          <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
+          <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
+          <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
+          <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
         </div>
       </div>
-    </div>
-<div class="entry"><span>Education System</span>
-      <div class="branch">
-        <div class="entry"><span>Basic Education</span>
-        </div>
-      </div>
-    </div>
-<div class="entry"><span>Health System</span>
-      <div class="branch">
-        <div class="entry"><span>Basic Care</span>
-</div> 
-</div>
-</div>
-</div> 
-</div>
-</div>
+      <ul>
+      </ul>
+</li>
+</template>
 <br>
 </details>
 <br>
