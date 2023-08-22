@@ -620,195 +620,117 @@ background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%)
   }
 }
 
-.treeview {
-  //Variables
-  $_treeview-level-size: 55px;
-  //General styles for bootstrap
-  .btn-default {
-    border-color: $border-color;
-
-    &:hover {
-      background-color: #f7faea;
-      color: $primary-color;
-    }
-  }
-  // Targetting the HTML Elements for treeview
-  ul {
-    list-style: none;
-    padding-left: 32px;
-
-    li {
-      padding: 50px 0px 0px 35px;
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: -26px;
-        left: -31px;
-        border-left: 2px dashed #a2a5b5;
-        width: 1px;
-        height: 100%;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        border-top: 2px dashed #a2a5b5;
-        top: 70px;
-        left: -30px;
-        width: 65px;
-      }
-
-      &:last-child:before {
-        top: -22px;
-        height: 90px;
-      }
-    }
-  }
-  // First Level Elements
-  & > ul {
-  & > li {
-    &:after,
-    &:last-child:before {
-      content: unset;
-    }
-
-    &:before {
-      top: 90px;
-      left: 36px;
-    }
-
-    &:not(:last-child) > ul > li {
-      &:before {
-        content: unset;
-      }
-    }
-
-    & > .treeview__level {
-      &:before {
-        height: $_treeview-level-size + 5;
-        width: $_treeview-level-size + 5;
-        top: -9.5px;
-        background-color: #54a6d9;
-        border: 7.5px solid #d5e9f6;
-        font-size: 22px;
-      }
-    }
-    
-    & > ul {
-      padding-left: 34px;
-    }
-  }
-  
+$border: #ddd;
+$border-hover: rgb(71,71,71);
+$bg-hover: rgba(0,0,0,.1);
+$text: rgba(102,102,102,1);
+$text-hover: #000;
+$ident: 30px;
+$left: -($ident);
+$first:#DDF3FE;
+$second:#DDEBC8;
+$third:#FEFCD5;
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}	
+ol {
+  margin-left:$ident;
+  counter-reset: item;
 }
-  // Treeview Components
-  &__level {
-    padding: 7px;
-    padding-left: ($_treeview-level-size / 2) + 15;
-    display: inline-block;
-    border-radius: 5px;
-    font-weight: 700;
-    border: 1px solid $border-color;
+.wtree {
+  li {
+    list-style-type: none;
+    margin:10px 0 10px 10px;
     position: relative;
-    z-index: 1;
-
     &:before {
-      content: attr(data-level);
+      content: "";
+      counter-increment: item; 
       position: absolute;
-      left: -($_treeview-level-size / 2);
-      top: -6.5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: $_treeview-level-size;
-      width: $_treeview-level-size;
-      border-radius: 50%;
-      border: 7.5px solid #eef6d5;
-      background-color: $primary-color;
-      color: #fff;
-      font-size: 20px;
+      top:-10px;
+      left:$left;
+      border-left: 1px solid $border;
+      border-bottom:1px solid $border;
+      width:$ident;
+      height:15px;
     }
-
-    &-btns {
-      margin-left: 15px;
-      display: inline-block;
-      position: relative;
+    &:after {
+      position:absolute;
+      content:"";
+      top:5px;
+      left:$left;
+      border-left: 1px solid $border;
+      border-top:1px solid $border;
+      width:$ident;
+      height:100%;
     }
+    &:last-child:after {
+      display:none;
+    }
+    span {
+      display:block;
+      border: 1px solid $border;
+      padding:10px;
+      color:$text;
+      text-decoration:none;
+      &:before{ 
+      content: counters(item, ".") " ";    
+    }
+    }
+  }
+}
 
-    .level {
-      &-same,
-      &-sub {
-        position: absolute;
-        display: none;
-        transition: opacity 250ms cubic-bezier(0.7, 0, 0.3, 1);
-        &.in {
-          display: block;
-          .btn-default {
-            background-color: #faeaea;
-            color: #da5555;
+.wtree {
+  li {
+    span {
+      &:hover,
+      &:focus { 
+        color: $text-hover; 
+        border: 1px solid $border-hover;
+        & + ol {
+          li {
+            span {
+              color: $text-hover; 
+              border: 1px solid $border-hover;
+            }
           }
         }
       }
 
-      &-same {
-        top: 0;
-        left: 45px;
-      }
-      &-sub {
-        top: 42px;
-        left: 0px;
-      }
-      &-remove {
-        display: none;
-      }
-    }
-
-    &.selected {
-      background-color: #f9f9fb;
-      box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.10);
-
-      .level {
-        &-remove {
-          display: inline-block;
-        }
-        &-add {
-          display: none;
-        }
-        &-same,
-        &-sub {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .level-title {
-    cursor: pointer;
-    user-select: none;
-    
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &--mapview {
-    ul {
-      justify-content: center;
-      display: flex;
-
-      li {
-        &:before {
-          content: unset;
-        }
-
-        &:after {
-          content: unset;
+      &:hover + ol, 
+      &:focus + ol {
+        li {
+          &:after,&:before {
+            border-color:  $border-hover;
+          }
         }
       }
     }
   }
 }
+
+li span {background-color:$first}
+li li span{background-color:$second}
+li li li span{background-color:$third}
+
+.display{
+  margin-right:12px;
+  font-weight:bold;
+}
+
+input , label{
+  margin:12px 0px 20px 0px;
+}
+
+label {
+    padding-left: 6px;
+    padding-right: 12px;
+}
+
+#radio-1:checked+label ~ ol li ol li {display: none;}
+#radio-2:checked+label ~ ol li ol li ol li  {display: none;}
+#radio-3:checked+label ~ li ol li ol li {display: none;}
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -837,75 +759,6 @@ Key Findings - Analyzing Inter-Federative Governance in Policy Implementation | 
 
 </script>
 
-<script>
-$(function() {
-  let treeview = {
-    resetBtnToggle: function() {
-      $(".js-treeview")
-        .find(".level-add")
-        .find("span")
-        .removeClass()
-        .addClass("fa fa-plus");
-      $(".js-treeview")
-        .find(".level-add")
-        .siblings()
-        .removeClass("in");
-    },
-    addSameLevel: function(target) {
-      let ulElm = target.closest("ul");
-      let sameLevelCodeASCII = target
-        .closest("[data-level]")
-        .attr("data-level")
-        .charCodeAt(0);
-      ulElm.append($("#levelMarkup").html());
-      ulElm
-        .children("li:last-child")
-        .find("[data-level]")
-        .attr("data-level", String.fromCharCode(sameLevelCodeASCII));
-    },
-    addSubLevel: function(target) {
-      let liElm = target.closest("li");
-      let nextLevelCodeASCII = liElm.find("[data-level]").attr("data-level").charCodeAt(0) + 1;
-      liElm.children("ul").append($("#levelMarkup").html());
-      liElm.children("ul").find("[data-level]")
-        .attr("data-level", String.fromCharCode(nextLevelCodeASCII));
-    },
-    removeLevel: function(target) {
-      target.closest("li").remove();
-      
-    }
-  };
-
-  // Treeview Functions
-  $(".js-treeview").on("click", ".level-add", function() {
-    $(this).find("span").toggleClass("fa-plus").toggleClass("fa-times text-danger");
-    $(this).siblings().toggleClass("in");
-  });
-
-  // Add same level
-  $(".js-treeview").on("click", ".level-same", function() {
-    treeview.addSameLevel($(this));
-    treeview.resetBtnToggle();
-  });
-
-  // Add sub level
-  $(".js-treeview").on("click", ".level-sub", function() {
-    treeview.addSubLevel($(this));
-    treeview.resetBtnToggle();
-  });
-    // Remove Level
-  $(".js-treeview").on("click", ".level-remove", function() {
-    treeview.removeLevel($(this));
-  }); 
-
-  // Selected Level
-  $(".js-treeview").on("click", ".level-title", function() {
-    let isSelected = $(this).closest("[data-level]").hasClass("selected");
-    !isSelected && $(this).closest(".js-treeview").find("[data-level]").removeClass("selected");
-    $(this).closest("[data-level]").toggleClass("selected");
-  }); 
-});
-</script>
 
 <header>
     <nav class="pt-3 navbar navbar-expand-lg">
@@ -1321,124 +1174,41 @@ To examine the impact of different governmental collaboration structures on poli
 the thesis' units of analysis breaks down three main systems, namely, the general Brazilian federative system; the Brazilian Unified Health System (SUS) and the Brazilian education system.	
 </p>
 </blockquote>
-<div class="treeview js-treeview">
-  <ul>
-    <li>
-      <div class="treeview__level" data-level="A">
-        <span class="level-title">Level A</span>
-        <div class="treeview__level-btns">
-          <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-          <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-          <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-          <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-        </div>
-      </div>
-      <ul>
 
-        <li>
-          <div class="treeview__level" data-level="B">
-            <span class="level-title">Level A</span>
-            <div class="treeview__level-btns">
-              <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-              <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-              <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-              <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-            </div>
-          </div>
-          <ul>
-
-            <li>
-              <div class="treeview__level" data-level="C">
-                <span class="level-title">Level A</span>
-                <div class="treeview__level-btns">
-                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-                </div>
-              </div>
-              <ul>
-
+<h1 class="title">Units of Analysis</h1>
+<span class="display">Show: </span>
+<input checked data-tooltip='first level' id='radio-1' name='test' type='radio' /><label for="radio-1">First level</label>
+<input id='radio-2' data-tooltip='second level' name='test' type='radio' /><label for="radio-2">Second level</label>
+    <ol class="wtree">
+        <li><span>Federative System</span>
+            <ol>
                 <li>
-                  <div class="treeview__level" data-level="D">
-                    <span class="level-title">Level A</span>
-                    <div class="treeview__level-btns">
-                      <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-                      <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-                      <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-                      <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-                    </div>
-                  </div>
-                  <ul>
-                  </ul>
+                    <span>Federal level</span>
                 </li>
-              </ul>
-            </li>
-
-            <li>
-              <div class="treeview__level" data-level="C">
-                <span class="level-title">Level A</span>
-                <div class="treeview__level-btns">
-                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-                </div>
-              </div>
-              <ul>
-              </ul>
-            </li>
-
-            <li>
-              <div class="treeview__level" data-level="C">
-                <span class="level-title">Level A</span>
-                <div class="treeview__level-btns">
-                  <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-                  <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-                  <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-                  <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-                </div>
-              </div>
-              <ul>
-              </ul>
-            </li>
-          </ul>
+                <li>
+                    <span>State level</span>
+                </li>
+                <li>
+                    <span>Municipal level</span>
+                </li>
         </li>
-
         <li>
-          <div class="treeview__level" data-level="B">
-            <span class="level-title">Level A</span>
-            <div class="treeview__level-btns">
-              <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-              <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-              <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-              <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-            </div>
-          </div>
-          <ul>
-          </ul>
+            <span>Education System</span>
+            <ol>
+                <li>
+                    <span>Basic Education</span>
         </li>
-      </ul>
-    </li>
-  </ul>
-</div>
-</div>
-
-<template id="levelMarkup">
-    <li>
-      <div class="treeview__level" data-level="A">
-        <span class="level-title">Level A</span>
-        <div class="treeview__level-btns">
-          <div class="btn btn-default btn-sm level-add"><span class="fa fa-plus"></span></div>
-          <div class="btn btn-default btn-sm level-remove"><span class="fa fa-trash text-danger"></span></div>
-          <div class="btn btn-default btn-sm level-same"><span>Add Same Level</span></div>
-          <div class="btn btn-default btn-sm level-sub"><span>Add Sub Level</span></div>
-        </div>
-      </div>
-      <ul>
-      </ul>
-</li>
-</template>
+	</li>
+        <li>
+            <span>Health System</span>
+            <ol>
+                <li>
+                    <span>Basic Healthcare</span>
+                </li>
+  
+        </li>
+    </ol>
+	
 <br>
 </details>
 <br>
