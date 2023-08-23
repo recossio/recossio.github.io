@@ -741,33 +741,37 @@ label {
   margin-top: 50px;
 }
 
-.comparison {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box1 {
+.main-card, .sub-card, .policy-card, .policy-sub-card {
   border: 1px solid #ccc;
   padding: 20px;
-  width: 300px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 10px auto;
+  width: 300px;
 }
 
-.not-formalized {
-  background-color: #f2f2f2;
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #ccc;
+  margin: 0 auto;
 }
 
-.unified {
+.sub-cards, .policy-sub-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.policy-card {
   background-color: #e6f7ff;
 }
 
-.vs {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0 20px;
+.policy-sub-card {
+  width: 150px;
+  margin: 0 10px;
 }
+
 	
 </style>
 
@@ -1273,33 +1277,32 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <details>
 <summary><strong>Logic</strong></summary>
   <div class="container1">
-    <div class="comparison">
-      <div class="box1 not-formalized">
-        <h2>Not Formalized</h2>
-        <ol>
-          <li>De Jure analysis</li>
-          <li>De Facto analysis</li>
-        </ol>
-        <h3>Policy Aspects:</h3>
-        <ol type="i">
-          <li>Strategic Management</li>
-          <li>Infrastructure</li>
-          <li>Human Resources</li>
-        </ol>
+    <div class="main-card">
+      <h2>Not Formalized VS Unified</h2>
+    </div>
+    <div class="arrow-down"></div>
+    <div class="sub-cards">
+      <div class="sub-card">
+        <h3>De Jure analysis</h3>
       </div>
-      <div class="vs">VS</div>
-      <div class="box1 unified">
-        <h2>Unified</h2>
-        <ol>
-          <li>De Jure analysis</li>
-          <li>De Facto analysis</li>
-        </ol>
-        <h3>Policy Aspects:</h3>
-        <ol type="i">
-          <li>Strategic Management</li>
-          <li>Infrastructure</li>
-          <li>Human Resources</li>
-        </ol>
+      <div class="sub-card">
+        <h3>De Facto analysis</h3>
+      </div>
+    </div>
+    <div class="arrow-down"></div>
+    <div class="policy-card">
+      <h2>Policy Aspects</h2>
+    </div>
+    <div class="arrow-down"></div>
+    <div class="policy-sub-cards">
+      <div class="policy-sub-card">
+        <h4>Strategic Management</h4>
+      </div>
+      <div class="policy-sub-card">
+        <h4>Infrastructure</h4>
+      </div>
+      <div class="policy-sub-card">
+        <h4>Human Resources</h4>
       </div>
     </div>
   </div>
