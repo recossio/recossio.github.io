@@ -745,7 +745,7 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  position: relative;
 }
 
 .card1 {
@@ -768,7 +768,27 @@ label {
   background-color: #ccc;
   margin: 20px auto;
   width: 50%;
+  position: relative;
+  z-index: -1;
 }
+
+.line-vertical {
+  width: 2px;
+  background-color: #ccc;
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  z-index: -1;
+}
+
+.line-vertical-double {
+  height: 80px;
+}
+
+.line-vertical-triple {
+  height: 120px;
+}
+
 
 	
 </style>
@@ -1276,27 +1296,29 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <summary><strong>Logic</strong></summary>
   <div class="container1">
     <div class="row1">
-      <div class="card">Not Formalized</div>
+      <div class="card1">Not Formalized</div>
       <div class="vs">VS</div>
       <div class="card1">Unified</div>
     </div>
     <div class="line-horizontal"></div>
+    <div class="line-vertical line-vertical-double"></div>
     <div class="row1">
       <div class="card1">De Jure analysis</div>
       <div class="card1">De Facto analysis</div>
     </div>
     <div class="line-horizontal"></div>
+    <div class="line-vertical"></div>
     <div class="row1">
       <div class="card1">Policy Aspects</div>
     </div>
     <div class="line-horizontal"></div>
+    <div class="line-vertical line-vertical-triple"></div>
     <div class="row1">
       <div class="card1">Strategic Management</div>
       <div class="card1">Infrastructure</div>
       <div class="card1">Human Resources</div>
     </div>
   </div>
-
 </details>
 </div>
 <br>
