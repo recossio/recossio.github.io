@@ -666,9 +666,11 @@ ol {
       padding:10px;
       color:rgba(102,102,102,1);
       text-decoration:none;
+      background-color: #f9f9f9; /* Add background color */
+      border-radius: 5px; /* Add rounded corners */
       &:before{ 
-      content: counters(item, ".") " ";    
-    }
+        content: counters(item, ".") " ";    
+      }
     }
   }
 }
@@ -723,6 +725,7 @@ label {
 #radio-1:checked+label ~ ol li ol li {display: none;}
 #radio-2:checked+label ~ ol li ol li ol li  {display: none;}
 #radio-3:checked+label ~ li ol li ol li {display: none;}
+
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
