@@ -736,6 +736,39 @@ label {
   display: none;
 }
 
+.container1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.comparison {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.not-formalized {
+  background-color: #f2f2f2;
+}
+
+.unified {
+  background-color: #e6f7ff;
+}
+
+.vs {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 20px;
+}
+	
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -1239,23 +1272,37 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <br>
 <details>
 <summary><strong>Logic</strong></summary>
-            <ul>
-                <li>
-                    <label class="toggle">Not formalized x Unified</label>
-                    <ul>
-                        <li>De Jure</li>
-                        <li>De Facto</li>
-                    </ul>
-                </li>
-                <li>
-                    <label class="toggle">Policy Aspects</label>
-                    <ul>
-                        <li>Strategic Management</li>
-                        <li>Infrastructure</li>
-                        <li>Human Resources</li>
-                    </ul>
-                </li>
-            </ul>
+  <div class="container1">
+    <div class="comparison">
+      <div class="box1 not-formalized">
+        <h2>Not Formalized</h2>
+        <ol>
+          <li>De Jure analysis</li>
+          <li>De Facto analysis</li>
+        </ol>
+        <h3>Policy Aspects:</h3>
+        <ol type="i">
+          <li>Strategic Management</li>
+          <li>Infrastructure</li>
+          <li>Human Resources</li>
+        </ol>
+      </div>
+      <div class="vs">VS</div>
+      <div class="box1 unified">
+        <h2>Unified</h2>
+        <ol>
+          <li>De Jure analysis</li>
+          <li>De Facto analysis</li>
+        </ol>
+        <h3>Policy Aspects:</h3>
+        <ol type="i">
+          <li>Strategic Management</li>
+          <li>Infrastructure</li>
+          <li>Human Resources</li>
+        </ol>
+      </div>
+    </div>
+  </div>
 </details>
 </div>
 <br>
