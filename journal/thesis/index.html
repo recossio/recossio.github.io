@@ -746,7 +746,11 @@ label {
   padding: 20px;
   border-radius: 10px;
   margin: 10px auto;
-  width: 300px;
+  width: fit-content; /* Adjusts width according to text */
+}
+
+.main-card {
+  background-color: #ccc; /* Darker background */
 }
 
 .arrow-down {
@@ -755,6 +759,19 @@ label {
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid #ccc;
+  margin: 0 auto;
+}
+
+.dual-arrows, .triple-arrows {
+  display: flex;
+  justify-content: center;
+}
+
+.converge-arrow {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
   margin: 0 auto;
 }
 
@@ -770,6 +787,14 @@ label {
 .policy-sub-card {
   width: 150px;
   margin: 0 10px;
+  text-align: center; /* Keeps text inside the card */
+  word-wrap: break-word; /* Breaks the word to next line */
+}
+
+.small-arrow {
+  border-top: 10px solid #ccc;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
 
 	
@@ -1276,11 +1301,20 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <br>
 <details>
 <summary><strong>Logic</strong></summary>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
   <div class="container1">
     <div class="main-card">
       <h2>Not Formalized VS Unified</h2>
     </div>
-    <div class="arrow-down"></div>
+    <div class="dual-arrows">
+      <div class="arrow-down"></div>
+      <div class="arrow-down"></div>
+    </div>
     <div class="sub-cards">
       <div class="sub-card">
         <h3>De Jure analysis</h3>
@@ -1289,11 +1323,15 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
         <h3>De Facto analysis</h3>
       </div>
     </div>
-    <div class="arrow-down"></div>
+    <div class="arrow-down converge-arrow"></div>
     <div class="policy-card">
       <h2>Policy Aspects</h2>
     </div>
-    <div class="arrow-down"></div>
+    <div class="triple-arrows">
+      <div class="arrow-down small-arrow"></div>
+      <div class="arrow-down small-arrow"></div>
+      <div class="arrow-down small-arrow"></div>
+    </div>
     <div class="policy-sub-cards">
       <div class="policy-sub-card">
         <h4>Strategic Management</h4>
@@ -1306,6 +1344,9 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
       </div>
     </div>
   </div>
+</body>
+</html>
+
 </details>
 </div>
 <br>
