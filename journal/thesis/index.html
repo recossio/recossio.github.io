@@ -737,33 +737,58 @@ label {
 }
 
 .container1 {
-  margin: auto;
-  border-collapse: collapse;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
 }
 
-.card1, .vs {
+.row1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card1 {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
+  margin: 10px;
+  min-width: 150px;
   text-align: center;
-  vertical-align: bottom;
 }
 
 .vs {
   font-size: 24px;
   font-weight: bold;
+  margin: 0 20px;
 }
 
-.line-horizontal {
+.line {
   height: 2px;
   background-color: #ccc;
+  margin: 20px auto;
+  width: 50%;
+  position: absolute;
 }
 
-.line-vertical {
-  width: 2px;
-  background-color: #ccc;
-  height: 40px;
-  vertical-align: top;
+.line1 {
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.line2 {
+  top: 150px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.line3 {
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80%;
 }
 
 	
@@ -1270,40 +1295,30 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <br>
 <details>
 <summary><strong>Logic</strong></summary>
+<div class="container1">
+  <div class="row1">
+    <div class="card">Not Formalized</div>
+    <div class="vs">VS</div>
+    <div class="card">Unified</div>
+  </div>
+  <div class="line line1"></div>
+  <div class="row1">
+    <div class="card1">De Jure analysis</div>
+    <div class="card1">De Facto analysis</div>
+  </div>
+  <div class="line line2"></div>
+  <div class="row">
+    <div class="card">Policy Aspects</div>
+  </div>
+  <div class="line line3"></div>
+  <div class="row">
+    <div class="card1">Strategic Management</div>
+    <div class="card1">Infrastructure</div>
+    <div class="card1">Human Resources</div>
+  </div>
+</div>
 
-  <table class="container1">
-    <tr>
-      <td class="card1">Not Formalized</td>
-      <td class="vs">VS</td>
-      <td class="card1">Unified</td>
-    </tr>
-    <tr>
-      <td class="line-vertical"></td>
-      <td></td>
-      <td class="line-vertical"></td>
-    </tr>
-    <tr>
-      <td class="card1">De Jure analysis</td>
-      <td></td>
-      <td class="card1">De Facto analysis</td>
-    </tr>
-    <tr>
-      <td colspan="3" class="line-horizontal"></td>
-    </tr>
-    <tr>
-      <td colspan="3" class="card">Policy Aspects</td>
-    </tr>
-    <tr>
-      <td class="line-vertical"></td>
-      <td class="line-vertical"></td>
-      <td class="line-vertical"></td>
-    </tr>
-    <tr>
-      <td class="card1">Strategic Management</td>
-      <td class="card1">Infrastructure</td>
-      <td class="card1">Human Resources</td>
-    </tr>
-  </table>
+
 </details>
 </div>
 <br>
