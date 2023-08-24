@@ -742,14 +742,14 @@ label {
   position: relative;
 }
 
-.row {
+.row1 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.card {
+.card1 {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 10px;
@@ -759,24 +759,26 @@ label {
   position: relative;
 }
 
-.card.strong {
+.strong1 {
   font-weight: bold;
   background-color: #CCCCFF;
 }
 
-.vs {
+.vs1 {
   font-size: 24px;
   font-weight: bold;
   margin: 0 20px;
 }
 
-.line {
+.line1 {
   height: 2px;
   background-color: #ccc;
   position: absolute;
 }
 
-.line1 {
+.line1a,
+.line1b,
+.line1c {
   top: 50%;
   left: 50%;
   width: 2px;
@@ -784,30 +786,6 @@ label {
   transform: translate(-50%, 50%);
 }
 
-.line2 {
-  top: 50%;
-  left: 50%;
-  width: 2px;
-  height: calc(100% + 20px);
-  transform: translate(-50%, 50%);
-}
-
-.line3 {
-  top: 50%;
-  left: 50%;
-  width: 2px;
-  height: calc(100% + 20px);
-  transform: translate(-50%, 50%);
-}
-
-.row:nth-child(1) .card:nth-child(1) .line1,
-.row:nth-child(3) .card:nth-child(1) .line2,
-.row:nth-child(5) .card:nth-child(1) .line3,
-.row:nth-child(1) .card:nth-child(3) .line1,
-.row:nth-child(3) .card:nth-child(2) .line2,
-.row:nth-child(5) .card:nth-child(1) .line3 {
-  display: block;
-}
 
 
 	
@@ -1315,29 +1293,27 @@ the thesis' units of analysis breaks down three main systems, namely, the genera
 <details>
 <summary><strong>Logic</strong></summary>
 <div class="container1">
-  <div class="row">
-    <div class="card strong">Not Formalized</div>
-    <div class="vs">VS</div>
-    <div class="card strong">Unified</div>
+  <div class="row1">
+    <div class="card1 strong1">Not Formalized</div>
+    <div class="vs1">VS</div>
+    <div class="card1 strong1">Unified</div>
   </div>
-  <div class="line line1"></div>
-  <div class="row">
-    <div class="card">De Jure analysis</div>
-    <div class="card">De Facto analysis</div>
+  <div class="line1 line1a"></div>
+  <div class="row1">
+    <div class="card1">De Jure analysis</div>
+    <div class="card1">De Facto analysis</div>
   </div>
-  <div class="line line2"></div>
-  <div class="row">
-    <div class="card strong">Policy Aspects</div>
+  <div class="line1 line1b"></div>
+  <div class="row1">
+    <div class="card1 strong1">Policy Aspects</div>
   </div>
-  <div class="line line3"></div>
-  <div class="row">
-    <div class="card">Strategic Management</div>
-    <div class="card">Infrastructure</div>
-    <div class="card">Human Resources</div>
+  <div class="line1 line1c"></div>
+  <div class="row1">
+    <div class="card1">Strategic Management</div>
+    <div class="card1">Infrastructure</div>
+    <div class="card1">Human Resources</div>
   </div>
 </div>
-
-
 
 </details>
 </div>
