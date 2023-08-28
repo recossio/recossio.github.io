@@ -734,60 +734,57 @@ label {
 
 #radio-3:checked + label ~ li ol li ol li {
   display: none;
-}
-
-        .custom-title {
-            display: block;
+}    
+	.customTitleCard {
             width: 100%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            background-color: #ccc;
-            margin-bottom: 20px;
-            cursor: pointer;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            overflow: hidden;
         }
-
-        .custom-title:hover + .custom-card-container {
-            display: flex;
+        .customTitle {
+            padding: 15px;
+            background-color: #f2f2f2;
         }
-
-        .custom-card-container {
-            display: none;
-            justify-content: space-around;
+        .customImageWrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
         }
-
-        .custom-card {
-            width: 150px;
+        .customImageCard {
+            width: 50%;
             height: 200px;
-            perspective: 1000px;
+            float: left;
+            position: relative;
+            border: 1px solid #ccc;
+            overflow: hidden;
         }
-
-        .custom-card-inner {
+        .customCardFront, .customCardBack {
+            position: absolute;
             width: 100%;
             height: 100%;
-            transform-style: preserve-3d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: transform 0.5s;
         }
-
-        .custom-card:hover .custom-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .custom-card-front, .custom-card-back {
+        .customCardFront img {
             width: 100%;
             height: 100%;
-            position: absolute;
-            backface-visibility: hidden;
+            object-fit: cover;
         }
-
-        .custom-card-front {
-            background-image: url('https://i.ibb.co/wBCcR7V/Captura-de-Tela-2023-08-28-a-s-11-17-28.png');
-            background-size: cover;
-        }
-
-        .custom-card-back {
-            background-color: grey;
+        .customCardBack {
+            background-color: lightgray;
             transform: rotateY(180deg);
+        }
+        .customImageCard:hover .customCardFront {
+            transform: rotateY(180deg);
+        }
+        .customImageCard:hover .customCardBack {
+            transform: rotateY(360deg);
+        }
+        .customTitleCard:hover .customImageWrapper {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
         }
 </style>
 
@@ -1404,26 +1401,41 @@ The study employs a qualitative approach, beginning with a language analysis of 
 </tbody>
 </table>
 <h5>Frequency of words and wordclouds</h5>
-   <div class="custom-title">Title 1</div>
-    <div class="custom-card-container">
-        <div class="custom-card">
-            <div class="custom-card-inner">
-                <div class="custom-card-front"></div>
-                <div class="custom-card-back">Details 1</div>
+    <div class="customTitleCard">
+        <div class="customTitle">Title 1</div>
+        <div class="customImageWrapper">
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://i.ibb.co/wBCcR7V/Captura-de-Tela-2023-08-28-a-s-11-17-28.png" alt="Image 1">
+                </div>
+                <div class="customCardBack">Details 1</div>
             </div>
-        </div>
-        <div class="custom-card">
-            <div class="custom-card-inner">
-                <div class="custom-card-front" style="background-image: url('https://i.ibb.co/Pjy1mrZ/Captura-de-Tela-2023-08-28-a-s-11-17-17.png');"></div>
-                <div class="custom-card-back">Details 2</div>
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://i.ibb.co/Pjy1mrZ/Captura-de-Tela-2023-08-28-a-s-11-17-17.png" alt="Image 2">
+                </div>
+                <div class="customCardBack">Details 2</div>
             </div>
         </div>
     </div>
-
-    <div class="custom-title">Title 2</div>
-    <div class="custom-card-container">
-        <!-- Add more cards here -->
+    <div class="customTitleCard">
+        <div class="customTitle">Title 2</div>
+        <div class="customImageWrapper">
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 3">
+                </div>
+                <div class="customCardBack">Details 3</div>
+            </div>
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 4">
+                </div>
+                <div class="customCardBack">Details 4</div>
+            </div>
+        </div>
     </div>
+    <!-- Add more title cards and image cards here -->	
 </details>
 <br>
 <details>
