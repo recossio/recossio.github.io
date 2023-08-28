@@ -747,6 +747,15 @@ label {
             border: 1px solid #ccc;
             overflow: hidden;
         }
+	.title {
+            width: 66.66%; /* Takes up the space of two cards */
+            height: 50px; /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
         .card-front, .card-back {
             position: absolute;
             width: 100%;
@@ -1394,7 +1403,8 @@ The study employs a qualitative approach, beginning with a language analysis of 
 </tbody>
 </table>
 <h5>Frequency of words and wordclouds</h5>
-    <div class="contentgrid">
+   <div class="contentgrid">
+        <div class="title">Title 1</div>
         <li>
             <div class="card-front">Front 1</div>
             <div class="card-back">Back 1</div>
@@ -1403,9 +1413,17 @@ The study employs a qualitative approach, beginning with a language analysis of 
             <div class="card-front">Front 2</div>
             <div class="card-back">Back 2</div>
         </li>
-        <!-- Add more list items here -->
-    </div>
-	
+        <div class="title">Title 2</div>
+        <li>
+            <div class="card-front">Front 3</div>
+            <div class="card-back">Back 3</div>
+        </li>
+        <li>
+            <div class="card-front">Front 4</div>
+            <div class="card-back">Back 4</div>
+        </li>
+        <!-- Add more list items and titles here -->
+    </div>	
 </details>
 <br>
 <details>
