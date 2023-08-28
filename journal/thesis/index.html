@@ -736,7 +736,36 @@ label {
   display: none;
 }
 
-
+	.contentgrid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .contentgrid li {
+            width: 33.33%;
+            height: 200px;
+            position: relative;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s;
+        }
+        .card-back {
+            background-color: lightgray;
+            transform: rotateY(180deg);
+        }
+        .contentgrid li:hover .card-front {
+            transform: rotateY(180deg);
+        }
+        .contentgrid li:hover .card-back {
+            transform: rotateY(360deg);
+        }
 </style>
 
 <meta name="description" content="Key Findings - Analyzing Inter-Federative Governance in Policy Implementation">
@@ -1324,6 +1353,19 @@ The study employs a qualitative approach, beginning with a language analysis of 
 		</div>
 	</div>
 </div>
+<div class="courses-container">
+	<div class="course">
+	<div class="course-info">
+		<h4>Context of the Brazilian legal system</h4>
+			<hr style="dashed-line">
+<p>
+<li>Brazil's legal hierarchy starts with the 1988 Constitution, followed by laws, decrees, and other legal instruments.</li>
+<li>SUS (Unified Health System) is governed by Law 8.080/1990, giving health more authority in cross-state governance compared to education.</li>
+</p>
+				</div>
+		</div>
+	</div>
+<br>
 <h4>Qualitative assessment of current legal documents</h4>
 <table>
 <thead>
@@ -1351,18 +1393,31 @@ The study employs a qualitative approach, beginning with a language analysis of 
 </tr>
 </tbody>
 </table>
-
+<h5>Frequency of words and wordclouds</h5>
+    <div class="contentgrid">
+        <li>
+            <div class="card-front">Front 1</div>
+            <div class="card-back">Back 1</div>
+        </li>
+        <li>
+            <div class="card-front">Front 2</div>
+            <div class="card-back">Back 2</div>
+        </li>
+        <!-- Add more list items here -->
+    </div>
+	
 </details>
 <br>
 <details>
 <summary><strong>De Facto</strong></summary>
 </details>
+<br>
 <h4 id="challenges">Challenges and Opportunities</h4>
 <ul>
 <li><strong>Healthcare</strong>: Challenges include moving from municipalization to regionalization.</li>
 <li><strong>Education</strong>: Challenges include unclear responsibilities, policy overlaps, heterogeneity, and insufficient coordination.</li>
 </ul>
-                
+<br>                
 <h3 id="conclusions">Conclusions</h3>
 <p>The thesis provides valuable insights into public governance coordination processes in Brazil, focusing on healthcare and education. Collaboration between different levels of government is essential, and the study offers a complex systems viewpoint.
 </p>
