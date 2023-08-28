@@ -736,27 +736,25 @@ label {
   display: none;
 }
 
-        .customGridContainer {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .customTitleCard {
+.customTitleCard {
             width: 100%;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: #f2f2f2;
             border: 1px solid #ccc;
             overflow: hidden;
         }
+        .customTitle {
+            padding: 15px;
+            background-color: #f2f2f2;
+        }
         .customImageWrapper {
-            display: none;
-            flex-wrap: wrap;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
         }
         .customImageCard {
             width: 50%;
             height: 200px;
+            float: left;
             position: relative;
             border: 1px solid #ccc;
             overflow: hidden;
@@ -786,7 +784,8 @@ label {
             transform: rotateY(360deg);
         }
         .customTitleCard:hover .customImageWrapper {
-            display: flex;
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
         }
 </style>
 
@@ -1434,25 +1433,41 @@ The study employs a qualitative approach, beginning with a language analysis of 
                 </div>
             </div>
         </div>
-        <div class="customTitleCard">
-            Title 2
-            <div class="customImageWrapper">
-                <div class="customImageCard">
-                    <div class="customCardFront">
-                        <img src="https://via.placeholder.com/150" alt="Placeholder Image 3">
-                    </div>
-                    <div class="customCardBack">Details 3</div>
+    <div class="customTitleCard">
+        <div class="customTitle">Title 1</div>
+        <div class="customImageWrapper">
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 1">
                 </div>
-                <div class="customImageCard">
-                    <div class="customCardFront">
-                        <img src="https://via.placeholder.com/150" alt="Placeholder Image 4">
-                    </div>
-                    <div class="customCardBack">Details 4</div>
+                <div class="customCardBack">Details 1</div>
+            </div>
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 2">
                 </div>
+                <div class="customCardBack">Details 2</div>
             </div>
         </div>
-        <!-- Add more title cards and image cards here -->
-    </div>	
+    </div>
+    <div class="customTitleCard">
+        <div class="customTitle">Title 2</div>
+        <div class="customImageWrapper">
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 3">
+                </div>
+                <div class="customCardBack">Details 3</div>
+            </div>
+            <div class="customImageCard">
+                <div class="customCardFront">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder Image 4">
+                </div>
+                <div class="customCardBack">Details 4</div>
+            </div>
+        </div>
+    </div>
+    <!-- Add more title cards and image cards here -->
 </details>
 <br>
 <details>
