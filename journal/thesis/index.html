@@ -788,6 +788,45 @@ label {
             max-height: 1000px;
             transition: max-height 0.5s ease-in;
         }
+
+    /* Container for the entire flow diagram */
+    .flow-diagram {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Style for the boxes/cards */
+    .box1 {
+      width: 150px;
+      height: 100px;
+      border: 2px solid black;
+      text-align: center;
+      line-height: 100px;
+      font-size: 18px;
+    }
+
+    /* Style for the floating list */
+    .floating-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .floating-list li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* Style for the arrows */
+    .arrow {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 20px solid black;
+      margin: 0 20px;
+    }
 	
 </style>
 
@@ -1553,7 +1592,34 @@ The study employs a qualitative approach, beginning with a language analysis of 
             </div>
         </div>
     </div>
-	
+<br>
+<h5>Level of association between terms related to collaboration and terms related to the units of analysis</h5>
+ <div class="flow-diagram">
+    <!-- First Column: Box with a title -->
+    <div class="box1">
+      Start
+    </div>
+
+    <!-- Arrow -->
+    <div class="arrow"></div>
+
+    <!-- Second Column: Floating list of words -->
+    <ul class="floating-list">
+      <li>Word 1</li>
+      <li>Word 2</li>
+      <li>Word 3</li>
+    </ul>
+
+    <!-- Arrow -->
+    <div class="arrow"></div>
+
+    <!-- Third Column: Box with a title -->
+    <div class="box1">
+      End
+    </div>
+  </div>
+
+
 </details>
 <br>
 <details>
